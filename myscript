@@ -15,7 +15,7 @@ touch myfile.txt
 # capture a hostname from
 echo -e "Please enter your a hostname: "
 read hostname
-# run the traceroute command and save output in myfile.txt
+# run the ping command pipe output into grep and  save the final output in myfile.txt
 ping -c 4 $hostname|grep 'transmitted' > myfile.txt
-# Move file to innerdirectory
+# Move myfile to innerdirectory
 mv myfile.txt mydirectory/innerdirectory/myfile.txt
