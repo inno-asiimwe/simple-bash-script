@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# create a directory name mydirectory
+mkdir mydirectory
+# create a second directory named mydirectory
+mkdir mydirectory2
+# Move to the first directory 
+cd mydirectory
+# create a directory in mydirectory
+mkdir innerdirectory
+# move back to the root directory
+cd ..
+# create a file in the root directory
+touch myfile.txt
+# capture a hostname from
+echo -e "Please enter your a hostname: "
+read hostname
+# run the traceroute command and save output in myfile.txt
+ping -c 4 $hostname|grep 'transmitted' > myfile.txt
+# Move file to innerdirectory
+mv myfile.txt mydirectory/innerdirectory/myfile.txt
